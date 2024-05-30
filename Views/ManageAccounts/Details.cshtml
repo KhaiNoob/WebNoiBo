@@ -37,9 +37,7 @@
         .profile-details dd {
             margin-bottom: 10px;
         }
-        .edit-link {
-            margin-top: 20px;
-        }
+        
     </style>
 </head>
 <body>
@@ -80,10 +78,8 @@
 
                      <dt class="col-sm-3">Phòng ban</dt>
                     <dd class="col-sm-9">@Html.DisplayFor(model => model.Department.Name)</dd>
+                    <a asp-action="Index" class="btn btn-secondary btn-sm">Quay lại</a>
                 </dl>
-                <div class="edit-link">
-                    <a class="btn btn-primary" asp-action="Edit">Chỉnh sửa</a>
-                </div>
             </div>
         </div>
     </div>
