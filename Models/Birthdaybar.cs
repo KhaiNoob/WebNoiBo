@@ -1,9 +1,11 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using System;
+using System.Linq;
 using WebsiteNoiBoCongTy.Data;
 
 namespace WebsiteNoiBoCongTy.Models
 {
-    public class Birthdaybar:ViewComponent
+    public class Birthdaybar : ViewComponent
     {
         private readonly WebsiteNoiBoCongTyContext _context;
 
@@ -14,9 +16,14 @@ namespace WebsiteNoiBoCongTy.Models
 
         public IViewComponentResult Invoke()
         {
-            DateTime dateTime = DateTime.Now;
-            Account? account = _context.Account.FirstOrDefault(acc => acc.Birthday.Day.Equals(dateTime.Day) && acc.Birthday.Month.Equals(dateTime.Month));
-            return View(account);
+   
+            if (HttpContext.Request.Path == "/" || HttpContext.Request.Path == "/Home/Index")
+            {
+                DateTime dateTime = DateTime.Now;
+                Account? account = _context.Account.FirstOrDefault(acc => acc.Birthday.Day.Equals(dateTime.Day) && acc.Birthday.Month.Equals(dateTime.Month));
+                return View(account);
+            }
+            return Content(""); 
         }
     }
 }
