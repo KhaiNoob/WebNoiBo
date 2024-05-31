@@ -37,6 +37,14 @@
         .profile-details dd {
             margin-bottom: 10px;
         }
+        .back-button {
+        margin-top: 20px; 
+        }
+
+        .back-button:hover {
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+        }
+
         
     </style>
 </head>
@@ -78,7 +86,8 @@
 
                      <dt class="col-sm-3">Phòng ban</dt>
                     <dd class="col-sm-9">@Html.DisplayFor(model => model.Department.Name)</dd>
-                    <a asp-action="Index" class="btn btn-secondary btn-sm">Quay lại</a>
+                   <a asp-action="Index" class="btn btn-secondary btn-sm back-button">Quay lại</a>
+
                 </dl>
             </div>
         </div>
