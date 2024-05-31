@@ -6,7 +6,7 @@
 }
 
 <div class="container mt-5">
-    <h1>Lịch họp</h1>
+    <h1>Quản lý lịch họp</h1>
 
     <div class="mb-3">
         <a class="btn btn-primary" asp-action="Create"><i class="fas fa-plus"></i> Tạo cuộc họp mới</a>
@@ -34,7 +34,7 @@
                         <td>@Html.DisplayFor(modelItem => item.Room.RoomCode)</td>
                         <td>@Html.DisplayFor(modelItem => item.Department.Name)</td>
                         <td>
-                            <a class="btn btn-sm btn-primary" asp-action="Edit" asp-route-id="@item.Id"><i class="fas fa-edit"></i> Chỉnh sửa</a>
+                            <a class="btn btn-sm btn-primary" asp-action="Edit" asp-route-id="@item.Id"><i class="fas fa-edit"></i> Sửa</a>
                             <a class="btn btn-sm btn-info" asp-action="Details" asp-route-id="@item.Id"><i class="fas fa-info-circle"></i> Chi tiết</a>
                             <a class="btn btn-sm btn-danger" asp-action="Delete" asp-route-id="@item.Id"><i class="fas fa-trash-alt"></i> Xóa</a>
                         </td>
